@@ -1,0 +1,16 @@
+.grid-list {
+    flex-direction: column;
+}
+
+.grid-list__button {
+    text-align: start;
+    width: 256px;
+}
+
+.grid-list__title {
+    padding: 0 0 12px 0;
+    text-align: start;
+    color: #969696;
+    font-weight: 600;
+    font-size: 14px;
+}
