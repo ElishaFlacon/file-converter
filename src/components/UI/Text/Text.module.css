@@ -1,0 +1,26 @@
+.text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0 0 8px 0;
+}
+
+.df {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.lg {
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.sm {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.xl {
+    font-size: 40px;
+    line-height: 48px;
+}
