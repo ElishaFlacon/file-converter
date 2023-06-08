@@ -7,9 +7,7 @@ import '../styles/GridList.css';
 function GridList({ items, title }) {
     return (
         <FlexboxGrid className='grid-list'>
-            <div className='grid-list__title'>
-                {title}
-            </div>
+            {title && <div className='grid-list__title'>{title}</div>}
 
             {items.map((item) => {
                 return (
