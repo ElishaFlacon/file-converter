@@ -59,3 +59,6 @@ export const fromPdfList = [
 ]
 
 export const fullPdfList = [...fromPdfList, ...toPdfList]
+
+export const homeTitle = 'Онлайн - инструменты для любителей PDF'
+export const homeDescription = 'Полностью бесплатные онлайн-инструменты для объединения, разделения, сжатия PDF-файлов, преобразования документов Office в PDF-файлы, преобразования PDF-файлов в JPG и JPG в PDF. Без необходимости установки'
