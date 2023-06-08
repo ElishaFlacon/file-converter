@@ -1,0 +1,13 @@
+.convertation {
+    margin: auto;
+    min-width: 100%;
+}
+
+.drag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    min-width: 600px;
+    height: 200px;
+}
