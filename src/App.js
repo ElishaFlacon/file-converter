@@ -7,18 +7,18 @@ import Footer from './components/Footer';
 
 
 function App() {
-
-
     return (
-        <BrowserRouter>
-            <Headers />
+        <div className='wrapper'>
+            <BrowserRouter>
+                <Headers />
 
-            <div className="app">
-                <AppRouter />
-            </div>
+                <div className="app">
+                    <AppRouter />
+                </div>
 
-            <Footer />
-        </BrowserRouter>
+                <Footer />
+            </BrowserRouter>
+        </div>
     );
 }
 
