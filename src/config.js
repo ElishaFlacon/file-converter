@@ -33,7 +33,7 @@ export const toPdfList = [
 
 export const fromPdfList = [
     {
-        title: 'PDF в WORDF',
+        title: 'PDF в WORD',
         text: 'Конвертируйте ваши PDF файлы в легко редактируемые DOC и DOCX документы. Преобразованный WORD документ будет точным почти на 100%',
         image: 'doc.svg',
         link: '/pdf-docx',
