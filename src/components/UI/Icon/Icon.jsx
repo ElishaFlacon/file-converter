@@ -8,7 +8,7 @@ function Icon({ picture, size = 'sm' }) {
             return classes.lg;
         }
         return classes.sm;
-    })
+    }, [size])
 
 
     return (
