@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import classes from './Icon.module.css';
 
 
-function Icon({ picture }) {
+function Icon({ picture, size = 'sm' }) {
+    const style = useMemo(() => {
+        if (size === 'lg') {
+            return classes.lg;
+        }
+        return classes.sm;
+    })
+
+
     return (
         <img
-            className={classes.icon}
+            className={style}
             src={require(`../../../assets/${picture}`)}
             alt="?"
         />
