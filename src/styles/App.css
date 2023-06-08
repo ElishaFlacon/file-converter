@@ -12,9 +12,14 @@
     border-radius: 0;
 }
 
+a,
+a:focus,
+a:active,
 a:hover {
-    text-decoration: none;
+    color: inherit;
+    text-decoration: inherit;
 }
+
 
 html {
     height: 100%;
@@ -23,21 +28,18 @@ html {
 
 body {
     min-height: 100vh;
-    min-width: 100vh;
     background-color: #fff;
 }
 
 .container {
     margin: auto;
-    width: 800px;
+    max-width: 800px;
 }
 
 .app {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     margin: auto;
     padding: 16px;
-    width: 800px;
+    max-width: 800px;
     min-height: 100vh;
 }
