@@ -7,18 +7,18 @@ import GridList from './GridList';
 
 function Header() {
     const toPdfList = [
-        { title: 'JPG в PDF', image: <Icon picture={'conversion.png'} />, link: '/jpg-pdf' },
-        { title: 'WORD в PDF', image: <Icon picture={'conversion.png'} />, link: '/docx-pdf' },
-        { title: 'POWERPOINT в PDF', image: <Icon picture={'conversion.png'} />, link: '/pptx-pdf' },
-        { title: 'EXCEL в PDF', image: <Icon picture={'conversion.png'} />, link: '/xlsx-pdf' },
-        { title: 'HTML в PDF', image: <Icon picture={'conversion.png'} />, link: '/html-pdf' },
+        { title: 'JPG в PDF', image: <Icon picture={'image.svg'} />, link: '/jpg-pdf' },
+        { title: 'WORD в PDF', image: <Icon picture={'doc.svg'} />, link: '/docx-pdf' },
+        { title: 'POWERPOINT в PDF', image: <Icon picture={'ppt.svg'} />, link: '/pptx-pdf' },
+        { title: 'EXCEL в PDF', image: <Icon picture={'xls.svg'} />, link: '/xlsx-pdf' },
+        { title: 'HTML в PDF', image: <Icon picture={'html.svg'} />, link: '/html-pdf' },
     ]
 
     const fromPdfList = [
-        { title: 'PDF в JPG', image: <Icon picture={'conversion.png'} />, link: '/pdf-jpg' },
-        { title: 'PDF в WORD', image: <Icon picture={'conversion.png'} />, link: '/pdf-docx' },
-        { title: 'PDF в POWERPOINT', image: <Icon picture={'conversion.png'} />, link: '/pdf-pptx' },
-        { title: 'PDF в EXCEL', image: <Icon picture={'conversion.png'} />, link: '/pdf-xlsx' },
+        { title: 'PDF в JPG', image: <Icon picture={'image.svg'} />, link: '/pdf-jpg' },
+        { title: 'PDF в WORD', image: <Icon picture={'doc.svg'} />, link: '/pdf-docx' },
+        { title: 'PDF в POWERPOINT', image: <Icon picture={'ppt.svg'} />, link: '/pdf-pptx' },
+        { title: 'PDF в EXCEL', image: <Icon picture={'xls.svg'} />, link: '/pdf-xlsx' },
     ]
 
 
@@ -26,7 +26,7 @@ function Header() {
         <Navbar className='header'>
             <div className='container'>
                 <Navbar.Brand>
-                    <Icon picture={'conversion.png'} />
+                    <Icon picture={'temp.svg'} />
                 </Navbar.Brand>
 
                 <Nav>
