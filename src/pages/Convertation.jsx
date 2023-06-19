@@ -7,7 +7,7 @@ import '../styles/Convertation.css';
 
 
 function Convertation() {
-    const [load, setLoad] = useState(false)
+    const [files, setFiles] = useState([]);
     const path = useParams();
 
     const data = useMemo(() => {
@@ -37,21 +37,61 @@ function Convertation() {
     }
 
 
+    const downloadFileById = (id) => {
+        files.forEach((file) => {
+            if (file.id === id) {
+                downloadFile(file.url);
+            }
+        })
+    }
+
+    const downloadFile = (file) => {
+        const link = document.createElement('a');
+        link.href = file;
+        link.download = file.name;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+    }
+
+
     return (
-        <div className='convertation' >
+        <div className='convertation'>
             <Uploader
-                action='http://localhost:5000'
+                className='asd'
+                listType='picture-text'
+                action='http://localhost:8000/upload/file/'
                 accept={`.${data.accept}`}
                 data={{
                     from: data.from,
                     to: data.to,
                 }}
-                multiple={false}
-                listType='picture-text'
-                disabled={load}
-                onUpload={() => setLoad(true)}
+                onSuccess={(response, file) => {
+                    setFiles([
+                        ...files,
+                        {
+                            url: response.file_url,
+                            id: file.fileKey,
+                        }
+                    ]);
+                    downloadFile(response.file_url);
+                }}
+                renderFileInfo={(file) => {
+                    return (
+                        <>
+                            <span>{file.name}</span>
+                            {file.status === 'finished' &&
+                                <div
+                                    className='absolute-text'
+                                    onClick={() => downloadFileById(file.fileKey)}
+                                >
+                                    <span>Нажмите чтобы скачать</span>
+                                </div >
+                            }
+                        </>
+                    );
+                }}
                 draggable
-                onSuccess={() => console.log('good')}
             >
                 <div>
                     <span className='drag'>
