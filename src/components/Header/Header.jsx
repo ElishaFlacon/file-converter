@@ -1,15 +1,15 @@
 import React from 'react';
 import { Navbar, Nav, FlexboxGrid } from 'rsuite';
-import '../styles/Header.css';
-import Icon from './UI/Icon/Icon';
-import GridList from './GridList';
+import classes from './Header.module.css';
+import Icon from '../UI/Icon/Icon';
+import FlexGridList from '../FlexGridList/FlexGridList';
 import { Link } from 'react-router-dom';
-import { fromPdfList, toPdfList } from '../config';
+import { fromPdfList, toPdfList } from '../../config';
 
 
 function Header() {
     return (
-        <Navbar className='header'>
+        <Navbar className={classes.header}>
             <div className='container'>
                 <Link to='/'>
                     <Navbar.Brand as='div'>
@@ -23,9 +23,9 @@ function Header() {
                         </Nav.Item>
                     </Link>
                     <Nav.Menu trigger='hover' title="КОНВЕРТИРОВАТЬ PDF">
-                        <FlexboxGrid className='header__flex-box'>
-                            <GridList size={'sm'} items={toPdfList} title="КОНВЕРТАЦИЯ В PDF" />
-                            <GridList size={'sm'} items={fromPdfList} title="ПРЕОБРАЗОВАТЬ ИЗ PDF" />
+                        <FlexboxGrid className={classes.flex_box}>
+                            <FlexGridList size={'sm'} items={toPdfList} title="КОНВЕРТАЦИЯ В PDF" />
+                            <FlexGridList size={'sm'} items={fromPdfList} title="ПРЕОБРАЗОВАТЬ ИЗ PDF" />
                         </FlexboxGrid>
                     </Nav.Menu>
                 </Nav>

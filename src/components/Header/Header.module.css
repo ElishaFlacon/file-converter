@@ -1,17 +1,23 @@
 .header {
+    padding: 0px 4px 0px 4px;
+
     position: sticky;
     top: 0;
     right: 0;
-    padding: 0px 4px 0px 4px;
+
     min-width: 100%;
+
+    color: var(--color-text-dark);
+
     background: #fff;
+
     box-shadow: 0 3px 6px 0 rgba(50, 50, 50, 0.3);
-    z-index: 9999;
+    z-index: 9;
 }
 
-.header__flex-box {
+.flex_box {
+    padding: 24px;
     flex-wrap: nowrap;
     justify-content: space-between;
     border-top: var(--rs-btn-primary-bg) 4px solid;
-    padding: 24px;
 }
