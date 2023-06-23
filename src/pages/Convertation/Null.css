@@ -1,0 +1,14 @@
+/* изменяем/перезатираем стили библиотеки react-suite для драг инпута */
+.rs-uploader-draggable .rs-uploader-trigger-customize .rs-uploader-trigger-btn {
+    margin-bottom: 48px;
+    border: none;
+}
+
+.rs-uploader-draggable .rs-uploader-trigger-customize .rs-uploader-trigger-btn:hover {
+    border: none;
+}
+
+/* изменяем/перезатираем стили библиотеки react-suite для загруженых файлов */
+.rs-uploader-picture-text .rs-uploader-file-item:hover {
+    background: none;
+}

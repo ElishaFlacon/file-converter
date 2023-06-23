@@ -1,0 +1,8 @@
+.convertation {
+    display: flex;
+    align-items: center;
+}
+
+.uploader {
+    z-index: 5;
+}
