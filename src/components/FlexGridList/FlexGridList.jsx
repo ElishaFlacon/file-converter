@@ -1,30 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, FlexboxGrid } from 'rsuite';
-import '../styles/GridList.css';
-import Icon from './UI/Icon/Icon';
+import classes from './FlexGridList.module.css';
+import Icon from '../UI/Icon/Icon';
 
 
 function GridList({ items, title, big }) {
     return (
-        <FlexboxGrid className={big ? 'grid-list-b' : 'grid-list-s'} >
-            {title && <div className='grid-list__title-s'>{title}</div>}
+        <FlexboxGrid className={big ? classes.grid_large : classes.grid_small} >
+            {title && <div className={classes.title_small}>{title}</div>}
 
             {items.map((item) => {
                 return (
                     <FlexboxGrid.Item
-                        className={big ? 'grid-list__item' : ''}
+                        className={big && classes.item}
                         key={item.link}
                     >
-                        <Link to={item.link} className={big ? 'grid-list__link' : 'grid-list__button-s'}>
+                        <Link to={item.link} className={big ? classes.link : classes.button_small}>
                             <Button
-                                className={big ? 'grid-list__button-b' : 'grid-list__button-s'}
+                                className={big ? classes.button_large : classes.button_small}
                                 startIcon={<Icon picture={item.image} size={big ? 'lg' : 'sm'} />}
                             >
-                                <div className={big ? 'grid-list__title-b' : ''}>
+                                <div className={big ? classes.title_large : ''}>
                                     {item.title}
                                 </div>
-                                {big && <div className='grid-list__text'>{item.text}</div>}
+                                {big && <div className={classes.text}>{item.text}</div>}
                             </Button>
                         </Link>
                     </FlexboxGrid.Item>
