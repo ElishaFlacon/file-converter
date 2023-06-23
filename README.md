@@ -9,7 +9,7 @@ File Converter это это Fullstack приложение, которое мо
 </br>
 </br>
 
-> В данном репозитории находиться клиентская часть (front-end) приложения, а серверная часть (back-end) приложения находитсья <a href="https://github.com/Alexmdvdv/ConverterFilesBackend/">здесь</a>
+> В данном репозитории находится клиентская часть (front-end) приложения, а серверная часть (back-end) приложения находится <a href="https://github.com/Alexmdvdv/ConverterFilesBackend/">здесь</a>
 </h3>
 
 
