@@ -55,7 +55,9 @@ File Converter это это Fullstack приложение, которое мо
  📺 Демо:
 </h2>
 
-- <a href="https://elishaflacon.github.io/">coming soon</a>
+- <a href="https://elishaflacon.github.io/file-converter/">Нажать чтобы демо!</a>
+- <a href="https://github.com/ElishaFlacon/file-converter/assets/83610362/8ede28d5-0519-4ffa-a0cc-6f3f2c1ec02b">Нажать чтобы демо видео!</a>
+- <video src="https://github.com/ElishaFlacon/file-converter/assets/83610362/8ede28d5-0519-4ffa-a0cc-6f3f2c1ec02b" />
 
 
 
