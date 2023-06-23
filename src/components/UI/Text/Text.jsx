@@ -10,6 +10,9 @@ function Text({ children, size = 'df' }) {
         if (size === 'sm') {
             return classes.sm;
         }
+        if (size === 'mn') {
+            return classes.mn;
+        }
         if (size === 'xl') {
             return classes.xl;
         }
