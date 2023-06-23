@@ -4,7 +4,10 @@
     align-items: center;
 }
 
+.panel {
+    background: var(--color-text);
+}
 
-.home__title {
+.title {
     margin: 24px 0 64px 0;
 }
