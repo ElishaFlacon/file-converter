@@ -1,0 +1,26 @@
+.absolute_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    color: var(--color-text-dark);
+
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.absolute_text:hover {
+    opacity: 0.8;
+}
+
+.title {
+    color: var(--color-text-dark);
+}
