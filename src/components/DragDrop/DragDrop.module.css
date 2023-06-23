@@ -1,0 +1,29 @@
+.drag_detector {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+}
+
+.drag_area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: var(--color-primary-dark);
+
+    opacity: 0.8;
+    z-index: 999;
+}
