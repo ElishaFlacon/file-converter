@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import PathService from "../service/Path.service";
 import { useNavigate } from "react-router-dom";
 
@@ -16,5 +16,5 @@ export const useVerifyPath = (path, callback) => {
 
             navigate('/undefind');
         }
-    }, [path])
+    }, [path, callback, navigate])
 }
