@@ -27,6 +27,18 @@ function Convertation() {
         FileService.downloadByUrl(response.file_url);
     }
 
+    // TODO появляеться сам файл, нужно сделать, чтобы его вырезало
+    const check = (file) => {
+        if (file.name.split('.').at(-1) !== from) {
+            console.log('неправильный формат файла');
+            return
+        }
+
+        return (
+            <FileInfo file={file} onClick={download} />
+        );
+    }
+
 
     return (
         <div className={classes.convertation}>
@@ -39,7 +51,7 @@ function Convertation() {
                 data={{ from, to }}
                 // TODO headers={{ Authorization: `Basic ${btoa("jopa:jopa")}` }}
                 onSuccess={success}
-                renderFileInfo={(file) => <FileInfo file={file} onClick={download} />}
+                renderFileInfo={check}
                 draggable
             >
                 <div>
