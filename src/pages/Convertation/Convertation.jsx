@@ -9,6 +9,7 @@ import DragButton from '../../components/UI/DragButton/DragButton';
 import DragArea from '../../components/DragDrop/DragArea';
 import DragDetector from '../../components/DragDrop/DragDetector';
 import { useVerifyPath } from '../../hooks/useVerifyPath';
+import { useAcceptFile } from '../../hooks/useAcceptFile';
 import './Null.css';
 
 
@@ -17,7 +18,7 @@ function Convertation() {
     const [drag, setDrag] = useState(false);
     const path = useParams();
     const [from, to] = path.convert.split('-');
-
+    const verifyFormat = useAcceptFile(from);
     useVerifyPath(path.convert);
 
     const download = (file) => FileService.downloadById(file.fileKey, files);
@@ -25,18 +26,6 @@ function Convertation() {
     const success = (response, file) => {
         setFiles([...files, { url: response.file_url, id: file.fileKey }]);
         FileService.downloadByUrl(response.file_url);
-    }
-
-    // TODO появляеться сам файл, нужно сделать, чтобы его вырезало
-    const check = (file) => {
-        if (file.name.split('.').at(-1) !== from) {
-            console.log('неправильный формат файла');
-            return
-        }
-
-        return (
-            <FileInfo file={file} onClick={download} />
-        );
     }
 
 
@@ -49,9 +38,10 @@ function Convertation() {
                 action={`${API_URL}/upload/file/`}
                 accept={`.${from}`}
                 data={{ from, to }}
-                // TODO headers={{ Authorization: `Basic ${btoa("jopa:jopa")}` }}
+                // TODO headers={{ Authorization: `Basic ${btoa("login:password")}` }}
                 onSuccess={success}
-                renderFileInfo={check}
+                shouldUpload={verifyFormat}
+                renderFileInfo={(file) => <FileInfo file={file} onClick={download} />}
                 draggable
             >
                 <div>
