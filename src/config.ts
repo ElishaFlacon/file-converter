@@ -1,4 +1,7 @@
-export const toPdfList = [
+import IСonversionItem from './types/СonversionItem';
+
+
+export const toPdfList: IСonversionItem[] = [
     {
         title: 'WORD в PDF',
         text: 'Конвертировать ваши документы в PDF-файл, который будет таким же самым как и оригинальный DOC или DOCX',
@@ -31,7 +34,7 @@ export const toPdfList = [
     },
 ]
 
-export const fromPdfList = [
+export const fromPdfList: IСonversionItem[] = [
     {
         title: 'PDF в WORD',
         text: 'Конвертируйте ваши PDF файлы в легко редактируемые DOC и DOCX документы. Преобразованный WORD документ будет точным почти на 100%',
@@ -58,9 +61,9 @@ export const fromPdfList = [
     },
 ]
 
-export const fullPdfList = [...fromPdfList, ...toPdfList]
+export const fullPdfList: IСonversionItem[] = [...fromPdfList, ...toPdfList]
 
-export const homeTitle = 'Онлайн - инструменты для любителей PDF'
-export const homeDescription = 'Полностью бесплатные онлайн-инструменты для объединения, разделения, сжатия PDF-файлов, преобразования документов Office в PDF-файлы, преобразования PDF-файлов в JPG и JPG в PDF. Без необходимости установки'
+export const homeTitle: string = 'Онлайн - инструменты для любителей PDF'
+export const homeDescription: string = 'Полностью бесплатные онлайн-инструменты для объединения, разделения, сжатия PDF-файлов, преобразования документов Office в PDF-файлы, преобразования PDF-файлов в JPG и JPG в PDF. Без необходимости установки'
 
-export const aboutText = 'Тут что то про нас можно написать хз, просто напишу много текста. Который будет полностью бесполезный, но так надо. И еще немного полностью бесполезного текста'
+export const aboutText: string = 'Тут что то про нас можно написать хз, просто напишу много текста. Который будет полностью бесполезный, но так надо. И еще немного полностью бесполезного текста'
