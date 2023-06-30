@@ -1,12 +1,12 @@
-import React from 'react';
-import './styles/App.css';
-import Headers from './components/Header/Header';
+import React, { FC } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import AppRouter from './components/AppRouter';
+import Headers from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import './styles/App.css';
 
 
-function App() {
+const App: FC = () => {
     return (
         <div className='wrapper'>
             <BrowserRouter>
