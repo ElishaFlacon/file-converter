@@ -10,15 +10,22 @@ import DragArea from '../../components/DragDrop/DragArea';
 import DragDetector from '../../components/DragDrop/DragDetector';
 import { useVerifyPath } from '../../hooks/useVerifyPath';
 import { useAcceptFile } from '../../hooks/useAcceptFile';
+import { accepts } from '../../config';
 import './Null.css';
 
 
 function Convertation() {
+    const [fileList, setff] = useState([]);
     const [files, setFiles] = useState([]);
     const [drag, setDrag] = useState(false);
+
     const path = useParams();
     const [from, to] = path.convert.split('-');
-    const verifyFormat = useAcceptFile(from);
+
+    const accept = accepts[from];
+
+    const verifyFormat = useAcceptFile(from, setff);
+
     useVerifyPath(path.convert);
 
     const download = (file) => FileService.downloadById(file.fileKey, files);
@@ -36,11 +43,12 @@ function Convertation() {
                 className={classes.uploader}
                 listType='picture-text'
                 action={`${API_URL}/upload/file/`}
-                accept={`.${from}`}
+                accept={accept}
                 data={{ from, to }}
                 // TODO headers={{ Authorization: `Basic ${btoa("login:password")}` }}
                 onSuccess={success}
                 shouldUpload={verifyFormat}
+                fileList={fileList}
                 renderFileInfo={(file) => <FileInfo file={file} onClick={download} />}
                 draggable
             >
