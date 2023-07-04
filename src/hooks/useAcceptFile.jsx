@@ -1,12 +1,21 @@
 // хук принимает формат файла (без точки), пример: pdf
 // и возвращает функцию, которая проверяет переданный файл на соответствие
-export const useAcceptFile = (accept) => {
-
+// fulfilled и reject это callback функции, которые выполняются 
+// при выполнении и отклонении, примерно как в промисах
+export const useAcceptFile = (accept, { fulfilled, reject }) => {
     return (file) => {
-        if (file.name.split('.').at(-1) !== accept) {
-            return false
+        const format = file.name.split('.').at(-1);
+
+        // используем !accept.includes(format), а не format !== accept
+        // потому что в accept лежит много форматов, пример ".doc, .doxc, .ttf"
+        if (!accept.includes(format)) {
+            reject && reject();
+
+            return false;
         }
 
-        return true
+        fulfilled && fulfilled();
+
+        return true;
     }
 }
