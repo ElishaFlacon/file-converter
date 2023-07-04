@@ -73,7 +73,7 @@ export const accepts: IAccepts = {
     pdf: '.pdf',
     word: ".doc,.docx,.odt,.ott,.stw,.sdw,.sxw",
     jpg: ".jpg,.jpeg,.png,.tif,.tiff",
-    poverpoint: '.ppt,.pptx,.odp,.pps,.ppsx,.sxi',
+    powerpoint: '.ppt,.pptx,.odp,.pps,.ppsx,.sxi',
     exel: '.xls,.xlsx,.ods,.ots,.sdc,.sxc',
     html: 'html',
 }
