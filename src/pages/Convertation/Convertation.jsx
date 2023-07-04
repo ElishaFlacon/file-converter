@@ -15,16 +15,15 @@ import './Null.css';
 
 
 function Convertation() {
-    const [fileList, setff] = useState([]);
+    const [fileList, setFileList] = useState([]);
     const [files, setFiles] = useState([]);
     const [drag, setDrag] = useState(false);
 
     const path = useParams();
     const [from, to] = path.convert.split('-');
-
     const accept = accepts[from];
 
-    const verifyFormat = useAcceptFile(from, setff);
+    const verifyFormat = useAcceptFile(accept, { reject: () => setFileList([]) });
 
     useVerifyPath(path.convert);
 
