@@ -11,6 +11,7 @@ import DragDetector from '../../components/DragDrop/DragDetector';
 import { useVerifyPath } from '../../hooks/useVerifyPath';
 import { useAcceptFile } from '../../hooks/useAcceptFile';
 import { accepts } from '../../config';
+import { useShowMessage } from '../../hooks/useShowMessage';
 import './Null.css';
 
 
@@ -23,7 +24,17 @@ function Convertation() {
     const [from, to] = path.convert.split('-');
     const accept = accepts[from];
 
-    const verifyFormat = useAcceptFile(accept, { reject: () => setFileList([]) });
+    const showMessage = useShowMessage();
+
+    const verifyFormat = useAcceptFile(accept, {
+        reject: () => {
+            // такая запись setFileList(fileList); потому что состояние fileList
+            // при его изменении в onChange, во время текущего вызова - не изменяется на новое
+            // если понадобится использовать текущее значение, то setFileList(current=>[...current]);
+            setFileList(fileList);
+            showMessage('Похоже этот формат не доступ здесь!', 'error');
+        }
+    });
 
     useVerifyPath(path.convert);
 
@@ -45,6 +56,7 @@ function Convertation() {
                 accept={accept}
                 data={{ from, to }}
                 // TODO headers={{ Authorization: `Basic ${btoa("login:password")}` }}
+                onChange={(fileList) => setFileList(fileList)}
                 onSuccess={success}
                 shouldUpload={verifyFormat}
                 fileList={fileList}
