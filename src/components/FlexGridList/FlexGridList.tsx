@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, FlexboxGrid } from 'rsuite';
 import classes from './FlexGridList.module.css';
 import Icon from '../UI/Icon/Icon';
+import IСonversionItem from '../../types/СonversionItem';
 
 
-function GridList({ items, title, big }) {
+interface props {
+    items: IСonversionItem[];
+    title?: string;
+    big?: boolean;
+}
+
+
+const FlexGridList: FC<props> = (props) => {
+    const { items, title, big } = props;
+
+
     return (
         <FlexboxGrid className={big ? classes.grid_large : classes.grid_small} >
             {title && <div className={classes.title_small}>{title}</div>}
@@ -35,4 +46,4 @@ function GridList({ items, title, big }) {
 }
 
 
-export default GridList;
+export default FlexGridList;

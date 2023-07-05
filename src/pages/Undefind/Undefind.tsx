@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Text from '../../components/UI/Text/Text';
 import classes from './Undefind.module.css';
 import { Link } from 'react-router-dom';
 import { Button } from 'rsuite';
 
 
-function Undefind() {
+const Undefind: FC = () => {
     return (
         <div className={classes.undefind}>
             <Text size='xl'>Упс!</Text>

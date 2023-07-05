@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classes from './FileInfo.module.css';
+import { FileType } from 'rsuite/esm/Uploader';
 
 
-function FileInfo({ file, onClick }) {
+interface props {
+    file: FileType;
+    onClick: Function;
+}
+
+
+const FileInfo: FC<props> = (props) => {
+    const { file, onClick } = props;
+
+
     return (
         <>
             <span className={classes.title}>

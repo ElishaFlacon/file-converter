@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import FlexGridList from '../../components/FlexGridList/FlexGridList';
 import { fullPdfList, homeTitle, homeDescription } from '../../config';
 import classes from './Home.module.css';
@@ -6,7 +6,7 @@ import Text from '../../components/UI/Text/Text';
 import { Panel } from 'rsuite';
 
 
-function Home() {
+const Home: FC = () => {
     return (
         <div className={classes.home}>
             <div className={classes.title}>
