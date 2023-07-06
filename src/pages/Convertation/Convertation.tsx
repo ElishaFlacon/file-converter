@@ -12,17 +12,21 @@ import { useVerifyPath } from '../../hooks/useVerifyPath';
 import { useAcceptFile } from '../../hooks/useAcceptFile';
 import { accepts } from '../../config';
 import { useShowMessage } from '../../hooks/useShowMessage';
+import IAccepts from '../../types/Accepts';
+import { FileType } from 'rsuite/esm/Uploader';
+import IConversionFiles from '../../types/ConversionFiles';
+import IConversionResponse from '../../types/ConversionResponse';
 import './Null.css';
 
 
 function Convertation() {
-    const [fileList, setFileList] = useState([]);
-    const [files, setFiles] = useState([]);
-    const [drag, setDrag] = useState(false);
+    const [fileList, setFileList] = useState<FileType[]>([]);
+    const [files, setFiles] = useState<IConversionFiles[]>([]);
+    const [drag, setDrag] = useState<boolean>(false);
 
     const path = useParams();
-    const [from, to] = path.convert.split('-');
-    const accept = accepts[from];
+    const [from, to] = path.convert?.split('-') || ['', ''];
+    const accept = accepts[from as keyof IAccepts];
 
     const showMessage = useShowMessage();
 
@@ -36,11 +40,11 @@ function Convertation() {
         }
     });
 
-    useVerifyPath(path.convert);
+    useVerifyPath(path.convert || '');
 
-    const download = (file) => FileService.downloadById(file.fileKey, files);
+    const download = (file: FileType) => FileService.downloadById(file.fileKey, files);
 
-    const success = (response, file) => {
+    const success = (response: IConversionResponse, file: FileType) => {
         setFiles([...files, { url: response.file_url, id: file.fileKey }]);
         FileService.downloadByUrl(response.file_url);
     }
