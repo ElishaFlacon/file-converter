@@ -4,12 +4,12 @@ import { PlacementType } from 'rsuite/esm/toaster/ToastContainer';
 import { useToaster } from 'rsuite/toaster';
 
 
-type Hook = (placement: PlacementType, duration: number) => Under;
-type Under = (title: string, type: TypeAttributes.Status | undefined) => void;
+export type USMHook = (placement: PlacementType, duration: number) => USMUnder;
+export type USMUnder = (title: string, type: TypeAttributes.Status | undefined) => void;
 
 
 // хук возвращает функцию, которая при ее вызове отображает сообщения с задаными параметрами
-export const useShowMessage: Hook = (placement = 'bottomStart', duration = 5000) => {
+export const useShowMessage: USMHook = (placement = 'bottomStart', duration = 5000) => {
     const toaster = useToaster();
 
 

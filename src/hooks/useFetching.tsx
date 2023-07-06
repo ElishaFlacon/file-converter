@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 
-type Hook = (callback: Function) => [fetching: Function, isLoading: boolean, error: string];
+export type UFHook = (callback: Function) => [fetching: Function, isLoading: boolean, error: string];
 
 
-export const useFetching: Hook = (callback: Function) => {
+export const useFetching: UFHook = (callback: Function) => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
 

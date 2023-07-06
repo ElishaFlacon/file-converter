@@ -1,13 +1,14 @@
 interface callbacks { fulfilled: Function; reject: Function }
-type Hook = (accept: string, callbacks: callbacks) => Under;
-type Under = (file: File) => boolean;
+
+export type UAFHook = (accept: string, callbacks: callbacks) => UAFUnder;
+export type UAFUnder = (file: File) => boolean;
 
 
 // хук принимает формат файла (без точки), пример: pdf
 // и возвращает функцию, которая проверяет переданный файл на соответствие
 // fulfilled и reject это callback функции, которые выполняются 
 // при выполнении и отклонении, примерно как в промисах
-export const useAcceptFile: Hook = (accept, callbacks) => {
+export const useAcceptFile: UAFHook = (accept, callbacks) => {
     return (file: File) => {
         const format: string = file.name.split('.').at(-1) || '';
 
