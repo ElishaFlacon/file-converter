@@ -3,7 +3,7 @@ import PathService from "../service/Path.service";
 import { useNavigate } from "react-router-dom";
 
 
-export type UVPHook = (path: string, callback: Function) => void;
+export type UVPHook = (path: string | undefined, callback?: Function) => void;
 
 
 // хук проверяет правильность пути
@@ -13,12 +13,14 @@ export const useVerifyPath: UVPHook = (path, callback) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!PathService.validation(path)) {
-            if (callback) {
-                callback();
-            }
+        if (path) {
+            if (!PathService.validation(path)) {
+                if (callback) {
+                    callback();
+                }
 
-            navigate('/undefind');
+                navigate('/undefind');
+            }
         }
     }, [path, callback, navigate])
 }
