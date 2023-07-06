@@ -1,8 +1,16 @@
-import React, { useMemo } from 'react';
+import React, { FC, useMemo } from 'react';
 import classes from './Icon.module.css';
 
 
-function Icon({ picture, size = 'sm' }) {
+interface props {
+    picture: string;
+    size?: 'lg' | 'sm';
+}
+
+
+const Icon: FC<props> = (props) => {
+    const { picture, size } = props;
+
     const style = useMemo(() => {
         if (size === 'lg') {
             return classes.lg;

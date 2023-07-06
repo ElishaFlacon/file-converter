@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classes from './DragButton.module.css';
 
 
-function DragButton({ children }) {
+interface props {
+    children: string;
+}
+
+
+const DragButton: FC<props> = (props) => {
+    const { children } = props;
+
     return (
         <div className={classes.button}>
             {children}

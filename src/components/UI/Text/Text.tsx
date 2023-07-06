@@ -1,8 +1,16 @@
-import React, { useMemo } from 'react';
+import React, { FC, useMemo } from 'react';
 import classes from './Text.module.css';
 
 
-function Text({ children, size = 'df' }) {
+interface props {
+    children: string;
+    size?: 'lg' | 'sm' | 'mn' | 'xl' | 'df';
+}
+
+
+const Text: FC<props> = (props) => {
+    const { children, size } = props;
+
     const style = useMemo(() => {
         if (size === 'lg') {
             return classes.lg;
