@@ -1,8 +1,8 @@
-import IConversionFiles from "../types/IConversionFiles";
+import IConversionFiles from "../types/ConversionFiles";
 
 
 type DBU = (file_url: string) => void;
-type DBI = (id: number, files: IConversionFiles[]) => void;
+type DBI = (id: string | number | undefined, files: IConversionFiles[]) => void;
 
 
 export default class FileService {
