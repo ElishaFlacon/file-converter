@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classes from './DragDrop.module.css';
 
 
-function DragDetector({ setState }) {
+interface props {
+    setState: Function;
+}
+
+
+const DragDetector: FC<props> = (props) => {
+    const { setState } = props;
+
     return (
         <div
             className={classes.drag_detector}

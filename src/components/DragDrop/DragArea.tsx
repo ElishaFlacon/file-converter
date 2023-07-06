@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { FC } from 'react';
 import classes from './DragDrop.module.css';
 
 
-function DragArea({ state, setState }) {
+interface props {
+    state: boolean;
+    setState: Function;
+}
+
+
+const DragArea: FC<props> = (props) => {
+    const { state, setState } = props;
+
     if (state) {
         return (
             <div
