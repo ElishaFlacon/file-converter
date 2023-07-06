@@ -3,7 +3,7 @@ import classes from './DragButton.module.css';
 
 
 interface props {
-    children: string;
+    children: string[];
 }
 
 
