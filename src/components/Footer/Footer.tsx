@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Button } from 'rsuite';
 import classes from './Footer.module.css';
 import Text from '../UI/Text/Text';
 
 
-function Footer() {
+const Footer: FC = () => {
     return (
         <div className={`${classes.footer} container`}>
             <hr />
