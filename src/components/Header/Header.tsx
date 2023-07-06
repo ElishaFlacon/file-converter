@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Navbar, Nav, FlexboxGrid } from 'rsuite';
 import classes from './Header.module.css';
 import Icon from '../UI/Icon/Icon';
@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { fromPdfList, toPdfList } from '../../config';
 
 
-function Header() {
+const Header: FC = () => {
     return (
         <Navbar className={classes.header}>
             <div className='container'>
@@ -24,8 +24,8 @@ function Header() {
                     </Link>
                     <Nav.Menu trigger='hover' title="КОНВЕРТИРОВАТЬ PDF">
                         <FlexboxGrid className={classes.flex_box}>
-                            <FlexGridList size={'sm'} items={toPdfList} title="КОНВЕРТАЦИЯ В PDF" />
-                            <FlexGridList size={'sm'} items={fromPdfList} title="ПРЕОБРАЗОВАТЬ ИЗ PDF" />
+                            <FlexGridList items={toPdfList} title="КОНВЕРТАЦИЯ В PDF" />
+                            <FlexGridList items={fromPdfList} title="ПРЕОБРАЗОВАТЬ ИЗ PDF" />
                         </FlexboxGrid>
                     </Nav.Menu>
                 </Nav>
