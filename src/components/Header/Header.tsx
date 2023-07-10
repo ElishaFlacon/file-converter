@@ -13,7 +13,7 @@ const Header: FC = () => {
             <div className='container'>
                 <Link to='/'>
                     <Navbar.Brand as='div'>
-                        <Icon picture={'temp.svg'} />
+                        <Icon picture={'pdf.svg'} />
                     </Navbar.Brand>
                 </Link>
                 <Nav>
