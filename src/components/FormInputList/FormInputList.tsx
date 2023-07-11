@@ -1,6 +1,7 @@
 import React, { ElementType, FC, ReactNode, useRef, useState } from 'react';
 import { Form, FormInstance, Stack } from 'rsuite';
 import FormInput from '../FormInput/FormInput';
+import { model } from '../../models';
 
 
 interface inputProps {
@@ -28,6 +29,7 @@ const FormInputList: FC<props> = (props) => {
             ref={formRef}
             formValue={formValue}
             onChange={(value) => setFormValue(value)}
+            model={model}
         >
             <Stack direction='column' spacing='16px' alignItems='center' >
                 {formInputs.map((formInput) => {
