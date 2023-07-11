@@ -16,12 +16,12 @@ interface props {
     formValue: object;
     setFormValue: Function;
     formRef: Ref<FormInstance<Record<string, any>>>;
-    model: any;
+    model?: any;
 }
 
 
 const FormInputList: FC<props> = (props) => {
-    const { formInputs, formButtons, formValue, setFormValue, formRef, model } = props;
+    const { formInputs, formButtons, formValue, setFormValue, formRef, ...rest } = props;
 
 
     return (
@@ -29,7 +29,7 @@ const FormInputList: FC<props> = (props) => {
             ref={formRef}
             formValue={formValue}
             onChange={(value) => setFormValue(value)}
-            model={model}
+            {...rest}
         >
             <Stack direction='column' spacing='36px' alignItems='center' >
                 {formInputs.map((formInput) => {
@@ -47,7 +47,7 @@ const FormInputList: FC<props> = (props) => {
                     {formButtons.map((button) => button)}
                 </Stack>
             </Stack>
-        </Form>
+        </Form >
     );
 }
 
