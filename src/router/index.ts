@@ -5,6 +5,7 @@ import Undefind from '../pages/Undefind/Undefind';
 import IRoutes from '../types/Routes';
 import Login from '../pages/Login/Login';
 import Registration from '../pages/Registration/Registration';
+import Forgot from '../pages/Reset/Forgot';
 
 
 export const routes: IRoutes[] = [
@@ -14,6 +15,7 @@ export const routes: IRoutes[] = [
     { path: '/registration', component: Registration },
     // { path: '/files', component: Files },
     // { path: '/reset', component: Reset },
+    { path: '/forgot', component: Forgot },
     { path: '/undefind', component: Undefind },
     { path: '/:convert', component: Convertation },
 ]
