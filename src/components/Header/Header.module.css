@@ -19,5 +19,5 @@
     padding: 24px;
     flex-wrap: nowrap;
     justify-content: space-between;
-    border-top: var(--rs-btn-primary-bg) 4px solid;
+    border-top: var(--color-primary) 4px solid;
 }
