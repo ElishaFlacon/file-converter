@@ -1,7 +1,6 @@
-import React, { ElementType, FC, ReactNode, useRef, useState } from 'react';
+import React, { ElementType, FC, ReactNode, Ref } from 'react';
 import { Form, FormInstance, Stack } from 'rsuite';
 import FormInput from '../FormInput/FormInput';
-import { model } from '../../models';
 
 
 interface inputProps {
@@ -14,14 +13,15 @@ interface inputProps {
 interface props {
     formInputs: inputProps[];
     formButtons: ReactNode[];
-    data: object;
+    formValue: object;
+    setFormValue: Function;
+    formRef: Ref<FormInstance<Record<string, any>>>;
+    model: any;
 }
 
 
 const FormInputList: FC<props> = (props) => {
-    const { formInputs, formButtons, data } = props;
-    const [formValue, setFormValue] = useState(data);
-    const formRef = useRef<FormInstance<Record<string, any>>>(null);
+    const { formInputs, formButtons, formValue, setFormValue, formRef, model } = props;
 
 
     return (
@@ -43,7 +43,7 @@ const FormInputList: FC<props> = (props) => {
                         />
                     )
                 })}
-                <Stack direction='column' spacing='12px' alignItems='center' >
+                <Stack direction='column' spacing='12px' alignItems='center'>
                     {formButtons.map((button) => button)}
                 </Stack>
             </Stack>
