@@ -7,19 +7,12 @@ const passwordsNotMatch = 'Пароли не совпадают!';
 
 const { StringType } = Schema.Types;
 
-export const loginModel = Schema.Model({
+export const model = Schema.Model({
     email: StringType()
         .isEmail(emailWrong)
         .isRequired(requiredField),
     password: StringType().isRequired(requiredField),
-});
-
-export const registrationModel = Schema.Model({
-    email: StringType()
-        .isEmail(emailWrong)
-        .isRequired(requiredField),
-    password: StringType().isRequired(requiredField),
-    verifyPassword: StringType()
+    verify: StringType()
         .addRule((value, data) => {
             if (value !== data.password) {
                 return false;
