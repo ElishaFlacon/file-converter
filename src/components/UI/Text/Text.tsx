@@ -1,9 +1,9 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC, useMemo, ReactNode } from 'react';
 import classes from './Text.module.css';
 
 
 interface props {
-    children: string;
+    children: ReactNode;
     size?: 'lg' | 'sm' | 'mn' | 'xl' | 'df';
 }
 
