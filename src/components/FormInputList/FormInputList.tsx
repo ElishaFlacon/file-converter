@@ -31,7 +31,7 @@ const FormInputList: FC<props> = (props) => {
             onChange={(value) => setFormValue(value)}
             model={model}
         >
-            <Stack direction='column' spacing='16px' alignItems='center' >
+            <Stack direction='column' spacing='36px' alignItems='center' >
                 {formInputs.map((formInput) => {
                     return (
                         <FormInput
@@ -43,8 +43,9 @@ const FormInputList: FC<props> = (props) => {
                         />
                     )
                 })}
-
-                {formButtons.map((button) => button)}
+                <Stack direction='column' spacing='12px' alignItems='center' >
+                    {formButtons.map((button) => button)}
+                </Stack>
             </Stack>
         </Form>
     );
