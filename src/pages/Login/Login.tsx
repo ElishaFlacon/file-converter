@@ -49,7 +49,7 @@ const Login: FC = () => {
     const formButtons = [
         <ButtonToolbar key='0'>
             <Button appearance='primary' onClick={handleSubmit}>Войти</Button>
-            <Link to='/reset'>
+            <Link to='/forgot'>
                 <Button appearance='link'>Забыли свой пароль?</Button>
             </Link>
         </ButtonToolbar>,
