@@ -34,7 +34,7 @@ const Registration: FC = () => {
                     },
                     {
                         name: 'verify',
-                        label: <><CharacterLock /> Проверка пароля</>,
+                        label: <><CharacterLock /> Повторите пароль</>,
                         rest: {
                             type: "password",
                             autoComplete: "off",
@@ -44,7 +44,7 @@ const Registration: FC = () => {
 
                 formButtons={[
                     <Button appearance='primary' key='0'>Регистрация</Button>,
-                    <div key='1'>
+                    <div className={classes.center} key='1'>
                         Вы уже зарегистрированы?
                         <Link to='/login'>
                             <Button appearance='link'>Войти</Button>
