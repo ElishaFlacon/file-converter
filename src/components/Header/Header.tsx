@@ -11,23 +11,35 @@ const Header: FC = () => {
     return (
         <Navbar className={classes.header}>
             <div className='container'>
-                <Link to='/'>
-                    <Navbar.Brand as='div'>
-                        <Icon picture={'pdf.svg'} />
-                    </Navbar.Brand>
-                </Link>
                 <Nav>
-                    <Link to='/about'>
+                    <Link to='/'>
                         <Nav.Item as='div'>
-                            О НАС
+                            <Icon picture={'pdf.svg'} />
                         </Nav.Item>
                     </Link>
-                    <Nav.Menu trigger='hover' title="КОНВЕРТИРОВАТЬ PDF">
+                    <Link to='/about'>
+                        <Nav.Item as='div'>
+                            О нас
+                        </Nav.Item>
+                    </Link>
+                    <Nav.Menu trigger='hover' title="Конвертировать PDF">
                         <FlexboxGrid className={classes.flex_box}>
-                            <FlexGridList items={toPdfList} title="КОНВЕРТАЦИЯ В PDF" />
-                            <FlexGridList items={fromPdfList} title="ПРЕОБРАЗОВАТЬ ИЗ PDF" />
+                            <FlexGridList items={toPdfList} title="Конвертация в PDF" />
+                            <FlexGridList items={fromPdfList} title="Преобразовать из PDF" />
                         </FlexboxGrid>
                     </Nav.Menu>
+                </Nav>
+                <Nav pullRight>
+                    <Link to='/login'>
+                        <Nav.Item as='div'>
+                            Вход
+                        </Nav.Item>
+                    </Link>
+                    <Link to='/registration'>
+                        <Nav.Item as='div'>
+                            Регистрация
+                        </Nav.Item>
+                    </Link>
                 </Nav>
             </div>
         </Navbar>
