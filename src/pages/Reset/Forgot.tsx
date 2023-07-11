@@ -1,10 +1,11 @@
 import React, { FC, useState, useRef } from 'react';
-import { Email } from '@rsuite/icons';
+import { Email, ArowBack } from '@rsuite/icons';
 import classes from './Forgot.module.css';
 import FormInputList from '../../components/FormInputList/FormInputList';
-import { Button, ButtonToolbar, FormInstance } from 'rsuite';
+import { Button, FormInstance } from 'rsuite';
 import { emailModel } from '../../models';
 import { useShowMessage } from '../../hooks/useShowMessage';
+import { Link } from 'react-router-dom';
 
 
 const data = {
@@ -37,7 +38,10 @@ const Forgot: FC = () => {
     }
 
     const formButtons = [
-        <Button key='1' appearance='primary' onClick={handleSubmit}>Отправить</Button>
+        <Button key='1' appearance='primary' onClick={handleSubmit}>Отправить</Button>,
+        <Link key='2' to='/registration'>
+            <Button appearance='link'> <ArowBack /> Назад</Button>
+        </Link>,
     ]
 
 
