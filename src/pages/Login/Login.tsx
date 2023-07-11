@@ -38,7 +38,7 @@ const Login: FC = () => {
                         <Button appearance='link'>Забыли свой пароль?</Button>
                     </Link>,
                     <Button appearance='primary' key='1'>Войти</Button>,
-                    <div key='2'>
+                    <div className={classes.center} key='2'>
                         У Вас нет учётной записи?
                         <Link to='/registration'>
                             <Button appearance='link'>Создать учетную запись</Button>
