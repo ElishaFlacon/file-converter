@@ -6,6 +6,7 @@ import { Button, FormInstance } from 'rsuite';
 import { Link } from 'react-router-dom';
 import { registrationModel } from '../../models';
 import { useShowMessage } from '../../hooks/useShowMessage';
+import Text from '../../components/UI/Text/Text';
 
 
 const data = {
@@ -51,7 +52,7 @@ const Registration: FC = () => {
             showMessage('Заполните форму!', 'error')
             return;
         }
-        
+
         console.log(formValue, 'Form Value');
     }
 
@@ -68,6 +69,9 @@ const Registration: FC = () => {
 
     return (
         <div className={classes.registration}>
+            <div className={classes.title}>
+                <Text size='df'>Создать учетную запись</Text>
+            </div>
             <FormInputList
                 formValue={formValue}
                 setFormValue={setFormValue}

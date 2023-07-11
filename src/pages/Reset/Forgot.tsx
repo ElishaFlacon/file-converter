@@ -6,6 +6,7 @@ import { Button, FormInstance } from 'rsuite';
 import { emailModel } from '../../models';
 import { useShowMessage } from '../../hooks/useShowMessage';
 import { Link } from 'react-router-dom';
+import Text from '../../components/UI/Text/Text';
 
 
 const data = {
@@ -39,7 +40,7 @@ const Forgot: FC = () => {
 
     const formButtons = [
         <Button key='1' appearance='primary' onClick={handleSubmit}>Отправить</Button>,
-        <Link key='2' to='/registration'>
+        <Link key='2' to='/login'>
             <Button appearance='link'> <ArowBack /> Назад</Button>
         </Link>,
     ]
@@ -47,6 +48,9 @@ const Forgot: FC = () => {
 
     return (
         <div className={classes.reset}>
+            <div className={classes.title}>
+                <Text size='df'>Сбросить пароль</Text>
+            </div>
             <FormInputList
                 formValue={formValue}
                 setFormValue={setFormValue}

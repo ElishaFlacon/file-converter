@@ -6,6 +6,7 @@ import { Button, ButtonToolbar, FormInstance } from 'rsuite';
 import { Link } from 'react-router-dom';
 import { loginModel } from '../../models';
 import { useShowMessage } from '../../hooks/useShowMessage';
+import Text from '../../components/UI/Text/Text';
 
 
 const data = {
@@ -64,6 +65,9 @@ const Login: FC = () => {
 
     return (
         <div className={classes.login}>
+            <div className={classes.title}>
+                <Text size='df'>Вход в вашу учетную запись</Text>
+            </div>
             <FormInputList
                 formValue={formValue}
                 setFormValue={setFormValue}
