@@ -3,7 +3,7 @@
 </h1>
 
 <h3>
-File Converter - это Fullstack приложение, которое может конвертировать любой файл в PDF и обратно. Front-end построен на TypeScript, React и Redux в связке с библиотекой компонентов React-Suite. Back-end написан на Python и использует фреймворк Django REST framework для работы API, который построен на архитектурном стиле REST. База данных SQLite (входящая в Django REST framework)
+File Converter - это Fullstack приложение, которое может конвертировать любой файл в PDF и обратно. Front-end написан на TypeScript и использует библиотеки React, Redux, Axios и библиотеку компонентов React-Suite. Back-end написан на Python и использует фреймворк Django REST framework для работы REST API. База данных SQLite (входящая в Django REST framework)
 
 </br>
 </br>
