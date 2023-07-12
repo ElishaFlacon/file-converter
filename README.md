@@ -22,10 +22,16 @@ File Converter - это Fullstack приложение, которое може�
   🛠️ Инструменты, которые использовались при разработке клиентской части приложения:
 </h2>
 
-- TypeScript
-- React
-- Redux (coming soon)
-- React-Suite
+- Front-end:
+     - TypeScript
+     - React
+     - Redux
+     - React-Suite
+- Back-end:
+     - Python
+     - Django REST framework
+     - SQLite
+
 
 
 
