@@ -2,6 +2,8 @@ import IAccepts from './types/Accepts';
 import IСonversionItem from './types/СonversionItem';
 
 
+export const API_URL = 'http://localhost:8000';
+
 export const toPdfList: IСonversionItem[] = [
     {
         title: 'WORD в PDF',
