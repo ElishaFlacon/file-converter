@@ -2,7 +2,7 @@ import axios, { AxiosInstance } from "axios";
 import { API_URL } from "../config";
 
 
-const $api: AxiosInstance = axios.create({
+export const $api: AxiosInstance = axios.create({
     baseURL: API_URL,
     withCredentials: true,
 });
@@ -12,4 +12,7 @@ $api.interceptors.request.use(config => {
     return config;
 });
 
-export default $api;
+export const $userAuthApi: AxiosInstance = axios.create({
+    baseURL: API_URL,
+    withCredentials: true,
+});
