@@ -1,7 +1,6 @@
 import axios, { AxiosInstance } from "axios";
+import { API_URL } from "../config";
 
-
-export const API_URL: string = 'http://localhost:8000';
 
 export const $api: AxiosInstance = axios.create({
     baseURL: API_URL,
