@@ -1,12 +1,10 @@
-import axios from "axios";
-import $api from "../api";
-import { API_URL } from "../config";
+import { $userAuthApi } from "../api";
 
 
 export default class AuthService {
     static async login(username: string, password: string) {
-        return $api.post(
-            '/user/login',
+        return $userAuthApi.post(
+            '/user/login/',
             {
                 username,
                 password,
@@ -15,8 +13,9 @@ export default class AuthService {
     }
 
     static async registration(username: string, email: string, password: string) {
-        return $api.post(
-            '/user/register',
+        // делаем через обычный запрос
+        return $userAuthApi.post(
+            `/user/register/`,
             {
                 user: {
                     username,
@@ -30,7 +29,7 @@ export default class AuthService {
     // logout??
 
     static async checkAuth() {
-        // делаем обычный аксиос заапрос чтобы не тянуть за собой аксес токен из интерцептора
-        return await axios.get(`${API_URL}/user/refresh`, { withCredentials: true });
+        // делаем простой запрос, потому что все что нужно в куках
+        return await $userAuthApi.get(`/user/refresh/`);
     }
 }
