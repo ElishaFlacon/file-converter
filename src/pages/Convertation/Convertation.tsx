@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Uploader } from 'rsuite';
 import classes from './Convertation.module.css';
-import { API_URL } from '../../api';
+import { API_URL } from '../../config';
 import FileService from '../../service/File.service';
 import FileInfo from '../../components/FileInfo/FileInfo';
 import DragButton from '../../components/UI/DragButton/DragButton';
