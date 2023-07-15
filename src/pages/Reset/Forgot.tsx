@@ -26,7 +26,7 @@ const formInputs = [
 
 const Forgot: FC = () => {
     const [formValue, setFormValue] = useState(data);
-    const formRef = useRef<FormInstance<Record<string, any>>>(null);
+    const formRef = useRef<FormInstance>(null);
     const showMessage = useShowMessage();
 
     const handleSubmit = () => {
