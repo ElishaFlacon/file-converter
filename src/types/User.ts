@@ -10,6 +10,7 @@ export interface IUserResponse {
 
 export interface IUserState {
     data: IUserResponse | null;
+    isAuth: boolean;
     loading: boolean;
     error: string | null;
 }
