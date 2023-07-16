@@ -30,6 +30,6 @@ export default class AuthService {
 
     static async checkAuth() {
         // делаем простой запрос, потому что все что нужно в куках
-        return await $userAuthApi.get(`/user/refresh/`);
+        return await $userAuthApi.get(`/user/token/refresh/`);
     }
 }
