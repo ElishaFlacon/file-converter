@@ -1,4 +1,4 @@
-import React, { FC, useState, useRef } from 'react';
+import React, { FC, useState, useRef, useEffect } from 'react';
 import { Email, CharacterLock } from '@rsuite/icons';
 import classes from './Registration.module.css';
 import FormInputList from '../../components/FormInputList/FormInputList';
@@ -7,9 +7,12 @@ import { Link } from 'react-router-dom';
 import { registrationModel } from '../../models';
 import { useShowMessage } from '../../hooks/useShowMessage';
 import Text from '../../components/UI/Text/Text';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { useDispatch } from 'react-redux';
+import { userRegistration } from '../../store/action-creators/user';
 
 
-const data = {
+const dataInputs = {
     email: '',
     password: '',
     verify: '',
@@ -43,17 +46,21 @@ const formInputs = [
 
 
 const Registration: FC = () => {
-    const [formValue, setFormValue] = useState(data);
+    const { isAuth, data, loading, error } = useTypedSelector(state => state.user);
+    const dispatch: any = useDispatch();
+
+    const [formValue, setFormValue] = useState(dataInputs);
     const formRef = useRef<FormInstance<Record<string, any>>>(null);
+
     const showMessage = useShowMessage();
 
     const handleSubmit = () => {
         if (!formRef.current?.check()) {
-            showMessage('Заполните форму!', 'error')
+            showMessage('Заполните форму!', 'error');
             return;
         }
 
-        console.log(formValue, 'Form Value');
+        dispatch(userRegistration(formValue.email, formValue.email, formValue.password));
     }
 
     const formButtons = [
@@ -65,6 +72,12 @@ const Registration: FC = () => {
             </Link>
         </div>,
     ]
+
+    useEffect(() => {
+        if (error === 'error on registration') {
+            showMessage('Возможно этот пользователь уже существует!', 'error');
+        }
+    }, [error])
 
 
     return (
