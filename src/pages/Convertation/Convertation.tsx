@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Uploader } from 'rsuite';
 import classes from './Convertation.module.css';
@@ -17,12 +17,19 @@ import { FileType } from 'rsuite/esm/Uploader';
 import IConversionFiles from '../../types/ConversionFiles';
 import IConversionResponse from '../../types/ConversionResponse';
 import './Null.css';
+import { userCheckAuth } from '../../store/action-creators/user';
+import { useDispatch } from 'react-redux';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 
 function Convertation() {
+    const { isAuth } = useTypedSelector(state => state.user);
+    const dispatch: any = useDispatch();
+
     const [fileList, setFileList] = useState<FileType[]>([]);
     const [files, setFiles] = useState<IConversionFiles[]>([]);
     const [drag, setDrag] = useState<boolean>(false);
+    // const [header, setHeader] = useState<object>({});
 
     const path = useParams();
     const [from, to] = path.convert?.split('-') || ['', ''];
@@ -49,6 +56,18 @@ function Convertation() {
         FileService.downloadByUrl(response.file_url);
     }
 
+    const change = (fileList: FileType[]) => {
+        dispatch(userCheckAuth());
+        setFileList(fileList);
+    }
+
+    const header = useMemo(() => {
+        if (isAuth) {
+            return { Authorization: `Bearer ${localStorage.getItem('token')}` };
+        }
+        return;
+    }, [isAuth])
+
 
     return (
         <div className={classes.convertation}>
@@ -56,11 +75,11 @@ function Convertation() {
             <Uploader
                 className={classes.uploader}
                 listType='picture-text'
-                action={`${API_URL}/upload/file/`}
+                action={`${API_URL}/file/upload/`}
                 accept={accept}
                 data={{ from, to }}
-                // TODO headers={{ Authorization: `Basic ${btoa("login:password")}` }}
-                onChange={(fileList) => setFileList(fileList)}
+                headers={header}
+                onChange={change}
                 onSuccess={success}
                 shouldUpload={verifyFormat}
                 fileList={fileList}
