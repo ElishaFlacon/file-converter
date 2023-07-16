@@ -23,6 +23,10 @@ export const privateRoutes: IRoutes[] = [
     { path: '/about', component: About },
     // { path: '/files', component: Files },
     // { path: '/reset', component: Reset },
+
+    // TODO, потом поменять на logout
+    { path: '/login', component: Login },
+
     { path: '/undefind', component: Undefind },
     { path: '/convertation/:convert', component: Convertation },
 ]
