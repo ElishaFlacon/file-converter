@@ -8,14 +8,21 @@ import Registration from '../pages/Registration/Registration';
 import Forgot from '../pages/Reset/Forgot';
 
 
-export const routes: IRoutes[] = [
+export const publicRoutes: IRoutes[] = [
     { path: '/', component: Home },
     { path: '/about', component: About },
     { path: '/login', component: Login },
     { path: '/registration', component: Registration },
-    // { path: '/files', component: Files },
-    // { path: '/reset', component: Reset },
     { path: '/forgot', component: Forgot },
     { path: '/undefind', component: Undefind },
-    { path: '/:convert', component: Convertation },
+    { path: '/convertation/:convert', component: Convertation },
+]
+
+export const privateRoutes: IRoutes[] = [
+    { path: '/', component: Home },
+    { path: '/about', component: About },
+    // { path: '/files', component: Files },
+    // { path: '/reset', component: Reset },
+    { path: '/undefind', component: Undefind },
+    { path: '/convertation/:convert', component: Convertation },
 ]
