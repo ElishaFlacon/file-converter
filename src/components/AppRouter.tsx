@@ -1,18 +1,40 @@
-import React, { FC } from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
-import { routes } from '../router';
+import React, { FC, useEffect } from 'react';
+import { Route, Routes, Navigate, useLocation } from 'react-router-dom';
+import { privateRoutes, publicRoutes } from '../router';
+import { userCheckAuth } from '../store/action-creators/user';
+import { useDispatch } from 'react-redux';
+import { useTypedSelector } from '../hooks/useTypedSelector';
 
 
 const AppRouter: FC = () => {
+    const { isAuth } = useTypedSelector(state => state.user);
+    const dispatch: any = useDispatch();
+
+    useEffect(() => {
+        dispatch(userCheckAuth());
+    }, []);
+
+
     return (
         <Routes>
-            {routes.map((route) =>
-                <Route
-                    key={route.path}
-                    path={route.path}
-                    element={<route.component />}
-                />
-            )}
+            {isAuth
+                ?
+                privateRoutes.map((route) =>
+                    <Route
+                        key={route.path}
+                        path={route.path}
+                        element={<route.component />}
+                    />
+                )
+                :
+                publicRoutes.map((route) =>
+                    <Route
+                        key={route.path}
+                        path={route.path}
+                        element={<route.component />}
+                    />
+                )
+            }
 
             <Route path='*' element={<Navigate to="/" replace />} />
         </Routes>
