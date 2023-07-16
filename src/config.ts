@@ -9,31 +9,31 @@ export const toPdfList: IСonversionItem[] = [
         title: 'WORD в PDF',
         text: 'Конвертировать ваши документы в PDF-файл, который будет таким же самым как и оригинальный DOC или DOCX',
         image: 'doc.svg',
-        link: '/word-pdf',
+        link: '/convertation/word-pdf',
     },
     {
         title: 'POWERPOINT в PDF',
         text: 'Конвертировать ваши презентации в PDF-файл, который будет таким же самым как и оригинальный PPT или PPTX',
         image: 'ppt.svg',
-        link: '/powerpoint-pdf',
+        link: '/convertation/powerpoint-pdf',
     },
     {
         title: 'EXCEL в PDF',
         text: 'Преобразование ваших таблиц с колонками в PDF файл, с учетом ширины PDF. Книжная или альбомная ориентация. Ваш выбор',
         image: 'xls.svg',
-        link: '/exel-pdf',
+        link: '/convertation/exel-pdf',
     },
     {
         title: 'JPG в PDF',
         text: 'Конвертируйте ваши изображения в формат PDF. Регуляция ориентации и полей',
         image: 'image.svg',
-        link: '/jpg-pdf',
+        link: '/convertation/jpg-pdf',
     },
     {
         title: 'HTML в PDF',
         text: 'Преобразуйте веб-страницы в HTML в PDF-файл. Скопируйте и вставьте URL-адрес нужной страницы и конвертируйте его в формат PDF одним щелчком мыши',
         image: 'html.svg',
-        link: '/html-pdf',
+        link: '/convertation/html-pdf',
     },
 ]
 
@@ -42,25 +42,25 @@ export const fromPdfList: IСonversionItem[] = [
         title: 'PDF в WORD',
         text: 'Конвертируйте ваши PDF файлы в легко редактируемые DOC и DOCX документы. Преобразованный WORD документ будет точным почти на 100%',
         image: 'doc.svg',
-        link: '/pdf-word',
+        link: '/convertation/pdf-word',
     },
     {
         title: 'PDF в  POWERPOINT',
         text: 'Конвертируйте ваши PDF файлы в легко редактируемые PPT и PPTX слайд-шоу',
         image: 'ppt.svg',
-        link: '/pdf-powerpoint',
+        link: '/convertation/pdf-powerpoint',
     },
     {
         title: 'PDF в EXCEL',
         text: 'Извлекайте данные прямо из PDF-файлов в электронные таблицы EXCEL, всего через несколько секунд',
         image: 'xls.svg',
-        link: '/pdf-exel',
+        link: '/convertation/pdf-exel',
     },
     {
         title: 'PDF в JPG',
         text: 'Извлекайте все изображения, содержащиеся в PDF или конвертируйте каждую страницу в файл JPG',
         image: 'image.svg',
-        link: '/pdf-jpg',
+        link: '/convertation/pdf-jpg',
     },
 ]
 
