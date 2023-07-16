@@ -9,7 +9,7 @@ export const userLogin = (username: string, password: string) => {
             dispatch({ type: UserActionTypes.USER_LOGIN });
 
             const response = await AuthService.login(username, password);
-            localStorage.setItem('token', response.data.acces_token);
+            localStorage.setItem('token', response.data.access_token);
 
             dispatch({
                 type: UserActionTypes.USER_LOGIN_SUCCESS,
@@ -30,7 +30,7 @@ export const userRegistration = (username: string, email: string, password: stri
             dispatch({ type: UserActionTypes.USER_REGISTRATION });
 
             const response = await AuthService.registration(username, email, password);
-            localStorage.setItem('token', response.data.acces_token);
+            localStorage.setItem('token', response.data.access_token);
 
             dispatch({
                 type: UserActionTypes.USER_REGISTRATION_SUCCESS,
@@ -51,7 +51,7 @@ export const userCheckAuth = () => {
             dispatch({ type: UserActionTypes.USER_CHECK_AUTH });
 
             const response = await AuthService.checkAuth();
-            localStorage.setItem('token', response.data.acces_token);
+            localStorage.setItem('token', response.data.access_token);
 
             dispatch({
                 type: UserActionTypes.USER_CHECK_AUTH_SUCCESS,
