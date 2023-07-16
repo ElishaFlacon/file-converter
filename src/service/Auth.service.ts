@@ -6,8 +6,10 @@ export default class AuthService {
         return $userAuthApi.post(
             '/user/login/',
             {
-                username,
-                password,
+                user: {
+                    username,
+                    password,
+                }
             }
         );
     }
