@@ -12,7 +12,7 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { userLogin } from '../../store/action-creators/user';
 
 
-const inputsData = {
+const dataInputs = {
     password: '',
     email: '',
 }
@@ -40,7 +40,7 @@ const Login: FC = () => {
     const { isAuth, data, loading, error } = useTypedSelector(state => state.user);
     const dispatch: any = useDispatch();
 
-    const [formValue, setFormValue] = useState(inputsData);
+    const [formValue, setFormValue] = useState(dataInputs);
     const formRef = useRef<FormInstance<Record<string, any>>>(null);
     const showMessage = useShowMessage();
 
