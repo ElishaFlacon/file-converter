@@ -6,10 +6,14 @@ import FlexGridList from '../FlexGridList/FlexGridList';
 import { fromPdfList, toPdfList } from '../../config';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import HeaderButton from '../UI/HeaderButton/HeaderButton';
+import { userLogout } from '../../store/action-creators/user';
+import { useDispatch } from 'react-redux';
 
 
 const Header: FC = () => {
     const { isAuth, data } = useTypedSelector(state => state.user);
+
+    const dispatch: any = useDispatch();
 
     const aboutText = "О нас";
     const loginText = 'Вход';
@@ -38,10 +42,10 @@ const Header: FC = () => {
                     {isAuth
                         ?
                         <>
-                            <HeaderButton to='/profile'>
+                            <HeaderButton to={`/profile/${data?.user.username}`}>
                                 {data?.user.username}
                             </HeaderButton>
-                            <HeaderButton to='/logout'>
+                            <HeaderButton to='/' onClick={() => dispatch(userLogout())}>
                                 {logoutText}
                             </HeaderButton>
                         </>
