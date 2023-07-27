@@ -65,3 +65,15 @@ export const userCheckAuth = () => {
         }
     }
 }
+
+export const userLogout = () => {
+    return async (dispatch: Dispatch<UserAction>) => {
+        try {
+            const response = await AuthService.logout();
+            localStorage.removeItem('token');
+            dispatch({ type: UserActionTypes.USER_LOGOUT });
+        } catch (error) {
+            console.error('woops');
+        }
+    }
+}
