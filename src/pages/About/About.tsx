@@ -9,6 +9,7 @@ const About: FC = () => {
         <div className={classes.about}>
             <Text size='lg'>О нас</Text>
             <Text size='sm'>{aboutText}</Text>
+            <img src={require('../../assets/love.jpg')} style={{ maxWidth: 800 }} />
         </div>
     );
 }
