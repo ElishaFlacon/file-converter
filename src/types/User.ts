@@ -28,6 +28,8 @@ export enum UserActionTypes {
     USER_CHECK_AUTH = 'USER_CHECK_AUTH',
     USER_CHECK_AUTH_SUCCESS = 'USER_CHECK_AUTH_SUCCESs',
     USER_CHECK_AUTH_ERROR = 'USER_CHECK_AUTH_ERROR',
+
+    USER_LOGOUT = 'USER_LOGOUT',
 }
 
 
@@ -82,4 +84,9 @@ interface IUserCheckAuthErrorAction {
 type TUserCheckAuth = IUserCheckAuthAction | IUserCheckAuthSuccessAction | IUserCheckAuthErrorAction;
 
 
-export type UserAction = TUserLogin | TUserRegistration | TUserCheckAuth;
+interface IUserLogout {
+    type: UserActionTypes.USER_LOGOUT;
+}
+
+
+export type UserAction = TUserLogin | TUserRegistration | TUserCheckAuth | IUserLogout;
