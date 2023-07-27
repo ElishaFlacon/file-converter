@@ -9,6 +9,15 @@ import { useTypedSelector } from '../hooks/useTypedSelector';
 const AppRouter: FC = () => {
     const { isAuth } = useTypedSelector(state => state.user);
     const dispatch: any = useDispatch();
+    const location = useLocation();
+
+    // 1 еффект нужен для обновления аксес токена, при переходах, если пользователь авторизован
+    // 2 еффект нужен для проверки авторизованности при перезагрузке страницы
+    useEffect(() => {
+        if (isAuth) {
+            dispatch(userCheckAuth());
+        }
+    }, [location]);
 
     useEffect(() => {
         dispatch(userCheckAuth());
