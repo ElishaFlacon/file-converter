@@ -1,4 +1,4 @@
-import { $userAuthApi } from "../api";
+import { $api, $userAuthApi } from "../api";
 
 
 export default class AuthService {
@@ -28,7 +28,10 @@ export default class AuthService {
         );
     }
 
-    // logout??
+    static async logout() {
+        // делаем простой запрос, потому что все что нужно в куках
+        return await $api.post(`/user/logout/`);
+    }
 
     static async checkAuth() {
         // делаем простой запрос, потому что все что нужно в куках
