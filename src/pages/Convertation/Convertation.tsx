@@ -57,7 +57,9 @@ function Convertation() {
     }
 
     const change = (fileList: FileType[]) => {
-        dispatch(userCheckAuth());
+        if (isAuth) {
+            dispatch(userCheckAuth());
+        }
         setFileList(fileList);
     }
 
