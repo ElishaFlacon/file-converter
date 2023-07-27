@@ -6,6 +6,7 @@ import IRoutes from '../types/Routes';
 import Login from '../pages/Login/Login';
 import Registration from '../pages/Registration/Registration';
 import Forgot from '../pages/Reset/Forgot';
+import Profile from '../pages/Profile/Profile';
 
 
 export const publicRoutes: IRoutes[] = [
@@ -21,12 +22,7 @@ export const publicRoutes: IRoutes[] = [
 export const privateRoutes: IRoutes[] = [
     { path: '/', component: Home },
     { path: '/about', component: About },
-    // { path: '/files', component: Files },
-    // { path: '/reset', component: Reset },
-
-    // TODO, потом поменять на logout component
-    { path: '/logout', component: Login },
-
+    { path: '/profile/:id', component: Profile },
     { path: '/undefind', component: Undefind },
     { path: '/convertation/:convert', component: Convertation },
 ]
