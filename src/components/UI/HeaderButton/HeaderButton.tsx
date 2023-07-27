@@ -7,13 +7,14 @@ interface props {
     children: ReactNode;
     to: string;
     as?: ElementType<any> | undefined;
+    onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
 
-const HeaderButton: FC<props> = ({ children, to, as = 'div' }: props) => {
+const HeaderButton: FC<props> = ({ children, to, as = 'div', onClick }: props) => {
     return (
         <Link to={to}>
-            <Nav.Item as={as}>
+            <Nav.Item as={as} onClick={onClick}>
                 {children}
             </Nav.Item>
         </Link>
