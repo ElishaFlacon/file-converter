@@ -79,7 +79,7 @@ function Convertation() {
                 listType='picture-text'
                 action={`${API_URL}/file/upload/`}
                 accept={accept}
-                data={{ from, to }}
+                data={{ to }}
                 headers={header}
                 onChange={change}
                 onSuccess={success}
