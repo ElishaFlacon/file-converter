@@ -1,7 +1,7 @@
 {
-    "homepage": "https://ElishaFlacon.github.io/file-converter/#",
+    "homepage": "https://ElishaFlacon.github.io/",
     "name": "file-converter",
-    "version": "1.0.0",
+    "version": "1.2.0",
     "private": true,
     "dependencies": {
         "@reduxjs/toolkit": "^1.9.5",
