@@ -44,14 +44,39 @@ File Converter - это Fullstack приложение, которое може�
 
 
 <h2>
-  🚀 Зпуск клиентской части приложения:
+  🚀 Зпуск приложения:
 </h2>
 
-- `git clone https://github.com/ElishaFlacon/file-converter.git`
-- `cd file-converter`
-- `npm install`
-- `npm audit fix` (если появились ошибки)
-- `npm start`
+- Зпускаем front-end:
+    - `git clone https://github.com/ElishaFlacon/file-converter.git`
+     - `cd file-converter`
+     - `npm install`
+     - `npm audit fix` (если появились ошибки)
+     - не забываем поменять адрес API
+     - `npm start`
+- Зпускаем back-end, через Docker:
+     - устанавливаем Docker
+     - `git clone https://github.com/Alexmdvdv/ConverterFilesBackend.git`
+     - `cd ConverterFilesBackend`
+     - запуск с SSL
+          - меняем домен в файле `ConverterFilesBackend/nginx/nginx.conf` на свой
+          - в каталоге `ConverterFilesBackend/nginx` создаем каталог `certs`
+          - в созданный каталог  `certs` кладем SSL сертификат и SSL ключ на ваш домен
+          - в файле `ConverterFilesBackend/nginx/nginx.conf` в строчках `ssl_certificate` и `ssl_certificate_key` меняем названия сертификатов на ваши
+     - запуск без SSL
+          - в файле `ConverterFilesBackend/nginx/nginx.conf` переместите из второго блока `server` в первый блок `server` блок `location` и  удалите второй блок `server`
+          - затем из первого блока server удалите строку `return 301 https://.../`
+          - и из файла `ConverterFilesBackend/docker-compose.yml` из блока `nginx` удалите блок `volumes`
+     - `docker-compose build`
+     - `docker-compose run`
+- Зпускаем back-end, локальный запуск:
+     - `git clone https://github.com/Alexmdvdv/ConverterFilesBackend.git`
+     - `cd ConverterFilesBackend`
+     - `pip install -r ./requirements.txt`
+     - `python manage.py migrate`
+     - `python manage.py runserver`
+     
+
 <h3>
     Запускаем, не работет, ура! 🗿🚬
 </h3>
