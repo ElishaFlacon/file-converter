@@ -2,7 +2,7 @@ import IAccepts from './types/Accepts';
 import IСonversionItem from './types/СonversionItem';
 
 
-export const API_URL: string = 'https://1627461-cg09372.twc1.net';
+export const API_URL: string = 'https://api.eelisey.store';
 
 export const toPdfList: IСonversionItem[] = [
     {
