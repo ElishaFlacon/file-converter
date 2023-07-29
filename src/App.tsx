@@ -9,7 +9,7 @@ import './styles/App.css';
 const App: FC = () => {
     return (
         <div className='wrapper'>
-            <BrowserRouter>
+            <HashRouter>
                 <Headers />
 
                 <div className="app">
@@ -17,7 +17,7 @@ const App: FC = () => {
                 </div>
 
                 <Footer />
-            </BrowserRouter>
+            </HashRouter>
         </div>
     );
 }
