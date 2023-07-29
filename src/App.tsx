@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import AppRouter from './components/AppRouter';
 import Headers from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -9,7 +9,7 @@ import './styles/App.css';
 const App: FC = () => {
     return (
         <div className='wrapper'>
-            <HashRouter>
+            <BrowserRouter>
                 <Headers />
 
                 <div className="app">
@@ -17,7 +17,7 @@ const App: FC = () => {
                 </div>
 
                 <Footer />
-            </HashRouter>
+            </BrowserRouter>
         </div>
     );
 }
