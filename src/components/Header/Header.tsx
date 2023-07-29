@@ -45,9 +45,9 @@ const Header: FC = () => {
                             <HeaderButton to={`/profile/${data?.user.username}`}>
                                 {data?.user.username}
                             </HeaderButton>
-                            <HeaderButton to='/' onClick={() => dispatch(userLogout())}>
+                            <Nav.Item as={'div'} onClick={() => dispatch(userLogout())} style={{ cursor: 'pointer' }}>
                                 {logoutText}
-                            </HeaderButton>
+                            </Nav.Item>
                         </>
                         :
                         <>
