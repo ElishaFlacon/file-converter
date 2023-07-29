@@ -60,3 +60,11 @@ body {
     align-items: center;
     height: 100vh;
 }
+
+@media screen and (max-width: 400px) {
+
+    .rs-form-control-wrapper>.rs-input,
+    .rs-form-control-wrapper>.rs-input-number {
+        width: 180px;
+    }
+}
