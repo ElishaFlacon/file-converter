@@ -1,6 +1,7 @@
 import React, { FC, ReactNode, ElementType } from 'react';
 import { Link } from 'react-router-dom';
 import { Nav } from 'rsuite';
+import classes from './HeaderButton.module.css';
 
 
 interface props {
@@ -14,7 +15,7 @@ interface props {
 const HeaderButton: FC<props> = ({ children, to, as = 'div', onClick }: props) => {
     return (
         <Link to={to}>
-            <Nav.Item as={as} onClick={onClick}>
+            <Nav.Item className={classes.button} as={as} onClick={onClick}>
                 {children}
             </Nav.Item>
         </Link>

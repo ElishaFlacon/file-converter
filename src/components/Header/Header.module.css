@@ -21,3 +21,9 @@
     justify-content: space-between;
     border-top: var(--color-primary) 4px solid;
 }
+
+@media screen and (max-width: 400px) {
+    .header {
+        padding: 0px;
+    }
+}

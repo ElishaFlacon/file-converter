@@ -20,6 +20,7 @@ import './Null.css';
 import { userCheckAuth } from '../../store/action-creators/user';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { useWindowDimensions } from '../../hooks/useWindowDimensions';
 
 
 function Convertation() {
@@ -29,11 +30,13 @@ function Convertation() {
     const [fileList, setFileList] = useState<FileType[]>([]);
     const [files, setFiles] = useState<IConversionFiles[]>([]);
     const [drag, setDrag] = useState<boolean>(false);
-    // const [header, setHeader] = useState<object>({});
 
     const path = useParams();
     const [from, to] = path.convert?.split('-') || ['', ''];
     const accept = accepts[from as keyof IAccepts];
+
+    const { width } = useWindowDimensions();
+    const buttonText = width > 500 ? `Выберите ${from.toUpperCase()} файлы или перетащите их сюда` : `Выберите ${from.toUpperCase()} файлы`;
 
     const showMessage = useShowMessage();
 
@@ -91,7 +94,7 @@ function Convertation() {
                 <div>
                     <DragArea state={drag} setState={setDrag} />
                     <DragButton>
-                        Выберите {from.toUpperCase()} файлы или перетащите их сюда
+                        {buttonText}
                     </DragButton>
                 </div>
             </Uploader>

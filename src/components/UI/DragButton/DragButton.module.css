@@ -16,3 +16,9 @@
 .button:hover {
     background: var(--color-primary-dark);
 }
+
+@media screen and (max-width: 500px) {
+    .button {
+        font-size: 18px;
+    }
+}

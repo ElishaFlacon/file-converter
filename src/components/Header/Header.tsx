@@ -8,12 +8,15 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 import HeaderButton from '../UI/HeaderButton/HeaderButton';
 import { userLogout } from '../../store/action-creators/user';
 import { useDispatch } from 'react-redux';
+import { useWindowDimensions } from '../../hooks/useWindowDimensions';
 
 
 const Header: FC = () => {
     const { isAuth, data } = useTypedSelector(state => state.user);
 
     const dispatch: any = useDispatch();
+
+    const { width } = useWindowDimensions();
 
     const aboutText = "О нас";
     const loginText = 'Вход';
@@ -31,12 +34,14 @@ const Header: FC = () => {
                     <HeaderButton to='/about'>
                         {aboutText}
                     </HeaderButton>
-                    <Nav.Menu trigger='hover' title="Конвертировать PDF">
-                        <FlexboxGrid className={classes.flex_box}>
-                            <FlexGridList items={toPdfList} title="Конвертация в PDF" />
-                            <FlexGridList items={fromPdfList} title="Преобразовать из PDF" />
-                        </FlexboxGrid>
-                    </Nav.Menu>
+                    {width > 680 &&
+                        <Nav.Menu trigger='hover' title="Конвертировать PDF">
+                            <FlexboxGrid className={classes.flex_box}>
+                                <FlexGridList items={toPdfList} title="Конвертация в PDF" />
+                                <FlexGridList items={fromPdfList} title="Преобразовать из PDF" />
+                            </FlexboxGrid>
+                        </Nav.Menu>
+                    }
                 </Nav>
                 <Nav pullRight>
                     {isAuth
