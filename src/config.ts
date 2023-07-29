@@ -2,7 +2,7 @@ import IAccepts from './types/Accepts';
 import IСonversionItem from './types/СonversionItem';
 
 
-export const API_URL: string = 'http://1627461-cg09372.twc1.net:8000';
+export const API_URL: string = 'https://1627461-cg09372.twc1.net';
 
 export const toPdfList: IСonversionItem[] = [
     {
