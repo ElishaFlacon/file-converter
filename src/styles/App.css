@@ -68,3 +68,12 @@ body {
         width: 180px;
     }
 }
+
+@media screen and (max-width: 500px) {
+
+    .rs-panel-body,
+    .rs-panel-header {
+        padding: 0px;
+        ;
+    }
+}

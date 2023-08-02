@@ -12,9 +12,3 @@
 .title {
     margin: 24px 0 64px 0;
 }
-
-@media screen and (max-width: 481px) {
-    .panel {
-        width: 216px;
-    }
-}

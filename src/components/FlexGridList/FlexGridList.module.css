@@ -75,3 +75,39 @@
     line-height: 18px;
     letter-spacing: 0.5px;
 }
+
+@media screen and (max-width: 850px) {
+    .button_large {
+        min-height: 300px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .title_large {
+        margin: 12px 0 4px 0;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .button_large {
+        min-width: 175px;
+        min-height: 330px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .button_large {
+        padding: 24px 8px 24px 8px;
+        max-width: 0;
+        min-width: 128px;
+    }
+}
+
+@media screen and (max-width: 310px) {
+    .button_large {
+        padding: 24px;
+        max-width: 100%;
+        min-width: 196px;
+        min-height: 300px;
+    }
+}
