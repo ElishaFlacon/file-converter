@@ -1,4 +1,5 @@
 import IAccepts from './types/Accepts';
+import { IProfileButtons } from './types/ProfileButtons';
 import IСonversionItem from './types/СonversionItem';
 
 
@@ -80,3 +81,9 @@ export const accepts: IAccepts = {
     exel: '.xls,.xlsx,.ods,.ots,.sdc,.sxc',
     html: 'html',
 }
+
+//! ЭТИ ДАННЫЕ НИ ГДЕ НЕ ИСПОЛЬЗУЕТСЯ
+export const profileButtonsList: IProfileButtons[] = [
+    { title: 'Профиль', to: '/profile' },
+    { title: 'Файлы', to: '/profile/files' }
+] 
