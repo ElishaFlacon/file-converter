@@ -1,6 +1,7 @@
 export interface IUser {
     username: string,
     email: string,
+    country: string,
 }
 
 export interface IUserResponse {
