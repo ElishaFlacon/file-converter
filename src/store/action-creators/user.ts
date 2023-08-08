@@ -3,12 +3,12 @@ import { UserAction, UserActionTypes } from "../../types/User";
 import AuthService from "../../service/Auth.service";
 
 
-export const userLogin = (username: string, password: string) => {
+export const userLogin = (email: string, password: string) => {
     return async (dispatch: Dispatch<UserAction>) => {
         try {
             dispatch({ type: UserActionTypes.USER_LOGIN });
 
-            const response = await AuthService.login(username, password);
+            const response = await AuthService.login(email, password);
             localStorage.setItem('token', response.data.access_token);
 
             dispatch({
