@@ -4,14 +4,24 @@
     margin: 0 0 8px 0;
 }
 
-.df {
-    font-size: 24px;
-    line-height: 28px;
+.xl {
+    font-size: 40px;
+    line-height: 48px;
 }
 
 .lg {
     font-size: 32px;
     line-height: 40px;
+}
+
+.df {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.xs {
+    font-size: 20px;
+    line-height: 24px;
 }
 
 .sm {
@@ -21,9 +31,4 @@
 
 .mn {
     font-size: 14px;
-}
-
-.xl {
-    font-size: 40px;
-    line-height: 48px;
 }
