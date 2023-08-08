@@ -1,5 +1,5 @@
 import React, { FC, useState, useRef, useEffect } from 'react';
-import { Email, CharacterLock } from '@rsuite/icons';
+import { Email, CharacterLock, UserBadge } from '@rsuite/icons';
 import classes from './Registration.module.css';
 import FormInputList from '../../components/FormInputList/FormInputList';
 import { Button, FormInstance } from 'rsuite';
@@ -13,12 +13,20 @@ import { userRegistration } from '../../store/action-creators/user';
 
 
 const dataInputs = {
+    username: '',
     email: '',
     password: '',
     verify: '',
 }
 
 const formInputs = [
+    {
+        name: 'username',
+        label: <><UserBadge /> Имя пользователя</>,
+        rest: {
+            type: "text",
+        },
+    },
     {
         name: 'email',
         label: <><Email /> Электронная почта</>,
@@ -60,7 +68,7 @@ const Registration: FC = () => {
             return;
         }
 
-        dispatch(userRegistration(formValue.email, formValue.email, formValue.password));
+        dispatch(userRegistration(formValue.username, formValue.email, formValue.password));
     }
 
     const formButtons = [
