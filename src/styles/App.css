@@ -15,6 +15,7 @@
     margin: 0;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
+    white-space: balance;
 }
 
 .rs-dropdown-menu {
@@ -28,6 +29,10 @@ a:active,
 a:hover {
     color: inherit;
     text-decoration: inherit;
+}
+
+b {
+    font-size: inherit;
 }
 
 html {
@@ -73,7 +78,6 @@ body {
 
     .rs-panel-body,
     .rs-panel-header {
-        padding: 0px;
-        ;
+        padding: 24px 0 24px 0;
     }
 }
