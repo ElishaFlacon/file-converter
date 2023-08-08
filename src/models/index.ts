@@ -4,6 +4,7 @@ import { Schema } from 'rsuite';
 const emailWrong = 'Введите верный адрес электронной почты!';
 const requiredField = 'Это поле является обязательным!';
 const passwordsNotMatch = 'Пароли не совпадают!';
+const lengthWrong = 'Имя пользователя не может быть больше 32 символов!';
 
 const { StringType } = Schema.Types;
 
@@ -21,6 +22,9 @@ export const loginModel = Schema.Model({
 });
 
 export const registrationModel = Schema.Model({
+    username: StringType()
+        .maxLength(32, lengthWrong)
+        .isRequired(requiredField),
     email: StringType()
         .isEmail(emailWrong)
         .isRequired(requiredField),
