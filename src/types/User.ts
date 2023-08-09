@@ -9,11 +9,16 @@ export interface IUserResponse {
     user: IUser;
 }
 
+export interface IUserRegistrationResponse {
+    message: string;
+}
+
 export interface IUserState {
     data: IUserResponse | null;
     isAuth: boolean;
     loading: boolean;
     error: string | null;
+    message: string | null;
 }
 
 
@@ -57,7 +62,7 @@ interface IUserRegistrationAction {
 
 interface IUserRegistrationSuccessAction {
     type: UserActionTypes.USER_REGISTRATION_SUCCESS;
-    payload: IUserResponse;
+    payload: IUserRegistrationResponse;
 }
 
 interface IUserRegistrationErrorAction {
