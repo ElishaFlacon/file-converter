@@ -47,7 +47,7 @@ const Header: FC = () => {
                     {isAuth
                         ?
                         <>
-                            <HeaderButton to={`/profile/${data?.user.username}`}>
+                            <HeaderButton to={`/profile`}>
                                 {data?.user.username}
                             </HeaderButton>
                             <Nav.Item as={'div'} onClick={() => dispatch(userLogout())} style={{ cursor: 'pointer' }}>
