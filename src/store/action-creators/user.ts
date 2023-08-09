@@ -30,7 +30,7 @@ export const userRegistration = (username: string, email: string, password: stri
             dispatch({ type: UserActionTypes.USER_REGISTRATION });
 
             const response = await AuthService.registration(username, email, password);
-            localStorage.setItem('token', response.data.access_token);
+            // localStorage.setItem('token', response.data.access_token);
 
             dispatch({
                 type: UserActionTypes.USER_REGISTRATION_SUCCESS,
@@ -40,6 +40,26 @@ export const userRegistration = (username: string, email: string, password: stri
             dispatch({
                 type: UserActionTypes.USER_REGISTRATION_ERROR,
                 payload: 'error on registration'
+            });
+        }
+    }
+}
+
+export const userConfirm = (token: string) => {
+    return async (dispatch: Dispatch<UserAction>) => {
+        try {
+            dispatch({ type: UserActionTypes.USER_LOGIN });
+
+            const response = await AuthService.confirm(token);
+
+            dispatch({
+                type: UserActionTypes.USER_LOGIN_SUCCESS,
+                payload: response.data,
+            });
+        } catch (error) {
+            dispatch({
+                type: UserActionTypes.USER_LOGIN_ERROR,
+                payload: 'error on login'
             });
         }
     }
