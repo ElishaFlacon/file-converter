@@ -3,7 +3,7 @@ import { Email, CharacterLock, UserBadge } from '@rsuite/icons';
 import classes from './Registration.module.css';
 import FormInputList from '../../components/FormInputList/FormInputList';
 import { Button, FormInstance } from 'rsuite';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { registrationModel } from '../../models';
 import { useShowMessage } from '../../hooks/useShowMessage';
 import Text from '../../components/UI/Text/Text';
@@ -54,13 +54,14 @@ const formInputs = [
 
 
 const Registration: FC = () => {
-    const { isAuth, data, loading, error } = useTypedSelector(state => state.user);
+    const { isAuth, data, loading, error, message } = useTypedSelector(state => state.user);
     const dispatch: any = useDispatch();
 
     const [formValue, setFormValue] = useState(dataInputs);
     const formRef = useRef<FormInstance<Record<string, any>>>(null);
 
     const showMessage = useShowMessage();
+    const navigate = useNavigate();
 
     const handleSubmit = () => {
         if (!formRef.current?.check()) {
@@ -86,6 +87,13 @@ const Registration: FC = () => {
             showMessage('Возможно этот пользователь уже существует!', 'error');
         }
     }, [error])
+
+    useEffect(() => {
+        if (message) {
+            navigate('/');
+            showMessage(message, 'success');
+        }
+    }, [message])
 
 
     return (
