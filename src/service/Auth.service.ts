@@ -2,12 +2,12 @@ import { $api, $userAuthApi } from "../api";
 
 
 export default class AuthService {
-    static async login(username: string, password: string) {
+    static async login(email: string, password: string) {
         return $userAuthApi.post(
             '/user/login/',
             {
                 user: {
-                    username,
+                    email,
                     password,
                 }
             }
@@ -28,9 +28,15 @@ export default class AuthService {
         );
     }
 
+    static async confirm(token: string) {
+        return await $userAuthApi.get(`/user/email/confirm/${token}`);
+    }
+
     static async logout() {
-        // делаем простой запрос, потому что все что нужно в куках
-        return await $api.post(`/user/logout/`);
+        const response = await this.checkAuth();
+        if (response) {
+            return await $api.post(`/user/logout/`);
+        }
     }
 
     static async checkAuth() {
