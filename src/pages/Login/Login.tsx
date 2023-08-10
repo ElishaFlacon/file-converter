@@ -89,7 +89,7 @@ const Login: FC = () => {
                 model={loginModel}
             />
             <br />
-            <Text size='mn'>{'Для ленивых 👉 почта: user@mail.ru пароль: user3221'}</Text>
+            <Text size='mn'>{'Для ленивых 👉 почта: user@mail.ru пароль: mega1234'}</Text>
         </div>
     );
 }

@@ -109,6 +109,8 @@ const Registration: FC = () => {
                 formButtons={formButtons}
                 model={registrationModel}
             />
+            <br />
+            <Text size='mn'>{'Для ленивых 👉 почта: user@mail.ru пароль: mega1234'}</Text>
         </div>
     );
 }
