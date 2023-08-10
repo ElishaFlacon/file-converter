@@ -38,7 +38,7 @@ const Forgot: FC = () => {
         }
 
         AuthService.forgotPassword(formValue.email);
-        showMessage('Сообщение о сбросе пароля отправлено на вашу почту!', 'error');
+        showMessage('Сообщение о сбросе пароля отправлено на вашу почту!', 'success');
         navigate('/');
     }
 
