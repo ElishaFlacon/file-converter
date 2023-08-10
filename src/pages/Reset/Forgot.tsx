@@ -7,6 +7,7 @@ import { emailModel } from '../../models';
 import { useShowMessage } from '../../hooks/useShowMessage';
 import { Link } from 'react-router-dom';
 import Text from '../../components/UI/Text/Text';
+import AuthService from '../../service/Auth.service';
 
 
 const data = {
@@ -35,7 +36,7 @@ const Forgot: FC = () => {
             return;
         }
 
-        console.log(formValue, 'Form Value');
+        AuthService.forgotPassword(formValue.email);
     }
 
     const formButtons = [
