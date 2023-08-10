@@ -8,6 +8,7 @@
 
 .image {
     margin-top: 24px;
-    width: 777px;
+    max-width: 600px;
+    max-height: 600px;
     max-width: 100%;
 }
