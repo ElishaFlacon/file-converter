@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Text from '../../components/UI/Text/Text';
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import { userConfirm } from '../../store/action-creators/user';
+import { userConfirmEmail } from '../../store/action-creators/user';
 import { useShowMessage } from '../../hooks/useShowMessage';
 
 
@@ -18,7 +18,7 @@ const Confirm: FC = () => {
 
     useEffect(() => {
         if (token) {
-            setTimeout(() => dispatch(userConfirm(token)), 6000);
+            setTimeout(() => dispatch(userConfirmEmail(token)), 6000);
         }
     }, [])
 

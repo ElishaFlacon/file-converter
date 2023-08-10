@@ -28,7 +28,7 @@ export default class AuthService {
         );
     }
 
-    static async confirm(token: string) {
+    static async confirmEmail(token: string) {
         return await $userAuthApi.get(`/user/email/confirm/${token}`);
     }
 

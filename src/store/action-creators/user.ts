@@ -45,12 +45,12 @@ export const userRegistration = (username: string, email: string, password: stri
     }
 }
 
-export const userConfirm = (token: string) => {
+export const userConfirmEmail = (token: string) => {
     return async (dispatch: Dispatch<UserAction>) => {
         try {
             dispatch({ type: UserActionTypes.USER_LOGIN });
 
-            const response = await AuthService.confirm(token);
+            const response = await AuthService.confirmEmail(token);
 
             dispatch({
                 type: UserActionTypes.USER_LOGIN_SUCCESS,
