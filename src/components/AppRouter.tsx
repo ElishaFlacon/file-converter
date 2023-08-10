@@ -20,7 +20,13 @@ const AppRouter: FC = () => {
     }, [location]);
 
     useEffect(() => {
+        // каждые 60 секунд делаем проверку авторизации
+        const timer = setInterval(() => {
+            dispatch(userCheckAuth());
+        }, 60000);
+
         dispatch(userCheckAuth());
+        return () => clearInterval(timer)
     }, []);
 
 
