@@ -5,7 +5,7 @@ import FormInputList from '../../components/FormInputList/FormInputList';
 import { Button, FormInstance } from 'rsuite';
 import { emailModel } from '../../models';
 import { useShowMessage } from '../../hooks/useShowMessage';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Text from '../../components/UI/Text/Text';
 import AuthService from '../../service/Auth.service';
 
@@ -29,6 +29,7 @@ const Forgot: FC = () => {
     const [formValue, setFormValue] = useState(data);
     const formRef = useRef<FormInstance>(null);
     const showMessage = useShowMessage();
+    const navigate = useNavigate();
 
     const handleSubmit = () => {
         if (!formRef.current?.check()) {
@@ -37,6 +38,8 @@ const Forgot: FC = () => {
         }
 
         AuthService.forgotPassword(formValue.email);
+        showMessage('Сообщение о сбросе пароля отправлено на вашу почту!', 'error');
+        navigate('/');
     }
 
     const formButtons = [
