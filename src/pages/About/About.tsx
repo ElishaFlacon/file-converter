@@ -9,7 +9,11 @@ const About: FC = () => {
         <div className={classes.about}>
             <Text size='lg'>О нас</Text>
             <Text size='sm'>{aboutText}</Text>
-            <img className={classes.image} src={require('../../assets/love.jpg')} />
+            <img
+                className={classes.image}
+                src="https://s.smallpdf.com/static/0662f6c0c413bac79035.svg"
+                alt={require('../../assets/love.jpg')}
+            />
         </div>
     );
 }
