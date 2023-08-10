@@ -32,11 +32,33 @@ export default class AuthService {
         return await $userAuthApi.get(`/user/email/confirm/${token}`);
     }
 
-    static async logout() {
-        const response = await this.checkAuth();
-        if (response) {
-            return await $api.post(`/user/logout/`);
+    static async forgotPassword(email: string) {
+        return await $userAuthApi.post(`/user/password/reset/`, { email: email });
+    }
+
+    static async confirmPassword(
+        token: string,
+        data: {
+            new_password: string,
+            confirm_password: string
         }
+    ) {
+        return await $userAuthApi.post(`/user/password/confirm/${token}/`, data);
+    }
+
+    static async update(
+        data: {
+            user: {
+                username: string,
+                email: string
+            }
+        }
+    ) {
+        return await $api.patch(`/user/update/`, data);
+    }
+
+    static async logout() {
+        return await $api.post(`/user/logout/`);
     }
 
     static async checkAuth() {
