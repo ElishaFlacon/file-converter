@@ -1,3 +1,4 @@
+import { $api } from "../api";
 import IConversionFiles from "../types/ConversionFiles";
 
 
@@ -6,6 +7,14 @@ type DBI = (id: string | number | undefined, files: IConversionFiles[]) => void;
 
 
 export default class FileService {
+    static async getUserFiles() {
+        return await $api.get(`/file/upload/`);
+    }
+
+    static async deleteUserFile(file_id: number) {
+        return await $api.delete(`/file/delete/${file_id}/`);
+    }
+
     static downloadByUrl: DBU = (file_url) => {
         const link: HTMLAnchorElement = document.createElement('a');
 
