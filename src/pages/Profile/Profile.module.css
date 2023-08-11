@@ -22,3 +22,33 @@
     padding: 12px;
     text-align: start;
 }
+
+@media screen and (max-width: 880px) {
+
+    .panel {
+        min-width: 600px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+
+    .panel {
+        min-width: 400px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .panel {
+        padding: 8px;
+        min-width: 100%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+
+    .panel {
+        padding: 4px;
+    }
+}
