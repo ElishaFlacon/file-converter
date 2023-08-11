@@ -13,7 +13,7 @@ File Converter - это Fullstack приложение, которое може�
 
 </br>
 
-> Вы можете протестировать работу приложения прямо <a href="https://eelisey.store/">здесь</a>
+> Вы можете протестировать работу приложения прямо <a href="https://file-converter.ru/">здесь</a>
 </h3>
 
 
@@ -91,7 +91,7 @@ File Converter - это Fullstack приложение, которое може�
  📺 Демо:
 </h2>
 
-- <a href="https://eelisey.store/">Нажать чтобы демо!</a>
+- <a href="https://file-converter.ru/">Нажать чтобы демо!</a>
 - <a href="https://github.com/ElishaFlacon/file-converter/assets/83610362/91920ed0-759a-443a-b5b4-1465eb6ad2bc">Нажать чтобы демо видео!</a>
 - <video src="https://github.com/ElishaFlacon/file-converter/assets/83610362/91920ed0-759a-443a-b5b4-1465eb6ad2bc" />
 
